@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Culto Al Placer | Estudio de Tatuajes</title>
+    <!-- Nueva fuente Gótica (Pirata One) y Open Sans para los textos largos -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Pirata+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navegación -->
+    <header class="navbar">
+        <div class="logo">CULTO AL <span>PLACER</span></div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#portafolio">Portafolio</a></li>
+                <li><a href="#artista">El Artista</a></li>
+                <li><a href="#contacto" class="btn-reserva">Reservar Cita</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sección Hero (Animación inmediata al cargar) -->
+    <section id="inicio" class="hero">
+        <div class="hero-content reveal">
+            <h1>Arte en tu piel</h1>
+            <p>Tu amas el arte, yo le hago el amor al arte </p>
+            <a href="#portafolio" class="btn-primary">Ver Trabajos</a>
+        </div>
+    </section>
+
+    <!-- Carrusel de Información (Marquee) animado -->
+    <div class="marquee-container reveal delay-1">
+        <div class="marquee-track">
+            <!-- Grupo 1 -->
+            <span>Walk-ins bienvenidos</span><span class="separator">✦</span>
+            <span>Tarjeta · Yape · Plin · Efectivo</span><span class="separator">✦</span>
+            <span>Callao · Lima · Perú</span><span class="separator">✦</span>
+            <span>Cita de asesoría gratuita</span><span class="separator">✦</span>
+            
+            <!-- Grupo 2 (Duplicado exacto para bucle infinito) -->
+            <span>Walk-ins bienvenidos</span><span class="separator">✦</span>
+            <span>Tarjeta · Yape · Plin · Efectivo</span><span class="separator">✦</span>
+            <span>Callao · Lima · Perú</span><span class="separator">✦</span>
+            <span>Cita de asesoría gratuita</span><span class="separator">✦</span>
+        </div>
+    </div>
+
+    <!-- Sección Portafolio -->
+    <section id="portafolio" class="portfolio">
+        <h2 class="reveal">Trabajos Recientes</h2>
+        <div class="gallery">
+            <div class="gallery-item reveal delay-1">
+                <img src="https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?q=80&w=800&auto=format&fit=crop" alt="Tatuaje Realismo">
+                <div class="overlay"><span>Realismo</span></div>
+            </div>
+            <div class="gallery-item reveal delay-2">
+                <img src="https://images.unsplash.com/photo-1568515387631-8b650bbcdb90?q=80&w=800&auto=format&fit=crop" alt="Tatuaje Black and Grey">
+                <div class="overlay"><span>Black & Grey</span></div>
+            </div>
+            <div class="gallery-item reveal delay-3">
+                <img src="https://images.unsplash.com/photo-1611501275019-9b5cda994e8d?q=80&w=800&auto=format&fit=crop" alt="Tatuaje Tradicional">
+                <div class="overlay"><span>Tradicional</span></div>
+            </div>
+            <div class="gallery-item reveal delay-4">
+                <img src="https://images.pexels.com/photos/2183132/pexels-photo-2183132.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Tatuaje Geométrico">
+                <div class="overlay"><span>Geométrico</span></div>
+            </div>
+            <div class="gallery-item reveal delay-5">
+                <img src="https://images.unsplash.com/photo-1578301978018-3005759f48f7?q=80&w=800&auto=format&fit=crop" alt="Tatuaje Brazo">
+                <div class="overlay"><span>Mangas</span></div>
+            </div>
+            <div class="gallery-item reveal delay-6">
+                <img src="https://images.pexels.com/photos/4125661/pexels-photo-4125661.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Diseño Custom">
+                <div class="overlay"><span>Custom Design</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Artista -->
+    <section id="artista" class="about">
+        <div class="about-img reveal">
+            <img src="https://images.unsplash.com/photo-1568515045052-f9a854d70bfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="El Artista Tatuando">
+        </div>
+        <div class="about-text reveal delay-2">
+            <h2>Sobre el Artista</h2>
+            <p>Con más de 10 años de experiencia, transformando ideas en obras de arte permanentes. Cada pieza está diseñada de forma única para adaptarse a la anatomía y visión del cliente, manteniendo los más altos estándares de higiene y cuidado.</p>
+            <ul class="features">
+                <li>✓ Materiales 100% Descartables</li>
+                <li>✓ Tintas Veganas</li>
+                <li>✓ Diseños Exclusivos</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Footer / Contacto -->
+    <footer id="contacto">
+        <div class="footer-content reveal">
+            <div class="contact-info">
+                <h3>Cotiza tu Tatuaje</h3>
+                <p>Envíanos tu idea, tamaño y zona del cuerpo para recibir una cotización por WhatsApp.</p>
+                <!-- Modificado para abrir el modal también desde el footer -->
+                <a href="#" class="btn-primary btn-reserva">Escribir al WhatsApp</a>
+            </div>
+            <div class="socials">
+                <p>Síguenos en Instagram</p>
+                <a href="#">@cultoalplacer_tattoo</a>
+            </div>
+        </div>
+        <div class="copyright reveal delay-1">
+            <p>&copy; 2026 Culto Al Placer. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Reserva (Pop-up WhatsApp) -->
+    <div id="reservaModal" class="modal">
+        <div class="modal-content-reserva">
+            <span class="close-reserva">&times;</span>
+            <div class="reserva-grid">
+                <!-- Columna Izquierda: Info del Estudio -->
+                <div class="reserva-info">
+                    <h2>Agenda en <br><span>Culto Al Placer</span></h2>
+                    <p>Te guiamos durante todo el proceso hasta la cicatrización. Agenda una cita de consulta o cotiza tu diseño.</p>
+                    <div class="info-detalles">
+                        <p><strong>📍 Ubicación:</strong> Calle Ejemplo 123, Callao, Lima</p>
+                        <p><strong>📞 Teléfono:</strong> +51 999 999 999</p>
+                        <p class="small-text">Walk-ins bienvenidos · Tarjeta, Yape, Plin o efectivo · Material 100% descartable</p>
+                    </div>
+                    <!-- Placeholder de Mapa -->
+                    <div class="mapa-placeholder">
+                        <p>🗺️ Zona del mapa (Aquí puedes insertar un iframe de Google Maps)</p>
+                    </div>
+                </div>
+                
+                <!-- Columna Derecha: Instrucciones WhatsApp -->
+                <div class="reserva-whatsapp">
+                    <h3>Cotiza tu Tatuaje</h3>
+                    <p>Escríbenos directamente por WhatsApp y cuéntanos tu idea.</p>
+                    <ul>
+                        <li>✓ Zona del cuerpo donde quieres el tatuaje</li>
+                        <li>✓ Tamaño aproximado (en cm o referencia)</li>
+                        <li>✓ Estilo (realismo, blackwork, tradicional, etc.)</li>
+                        <li>✓ Referencia o imagen de lo que tienes en mente</li>
+                    </ul>
+                    <p class="small-text">Te respondemos en el menor tiempo posible con tu cotización personalizada.</p>
+                    
+                    <!-- Botón Verde de WhatsApp -->
+                    <a href="https://wa.me/51999999999?text=Hola,%20vengo%20de%20la%20página%20web%20y%20quiero%20cotizar%20un%20tatuaje." target="_blank" class="btn-whatsapp">
+                        <span class="wa-icon">💬</span> COTIZAR POR WHATSAPP
+                    </a>
+                    <p class="small-text center">Respuesta en minutos · Asesoría gratuita</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal para imágenes (Lightbox) -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgExpanded">
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

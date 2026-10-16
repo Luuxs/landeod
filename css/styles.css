@@ -1,0 +1,615 @@
+/* Variables Globales */
+:root {
+    --bg-color: #08030f;
+    --text-color: #f4f4f4;
+    --primary-color: #a855f7;
+    --primary-hover: #9333ea;
+    --secondary-bg: #11081a;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+}
+
+/* Tipografía gótica para títulos y logo */
+h1, h2, h3, .logo, .overlay span {
+    font-family: 'Pirata One', cursive;
+    font-weight: 400;
+    letter-spacing: 3px;
+}
+
+/* Navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    background-color: rgba(8, 3, 15, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #2a1b3d;
+    backdrop-filter: blur(5px);
+}
+
+.logo {
+    font-size: 28px;
+}
+
+.logo span {
+    color: var(--primary-color);
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.4);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+}
+
+.btn-reserva {
+    border: 1px solid var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.2) inset;
+    cursor: pointer;
+}
+
+.btn-reserva:hover {
+    background-color: var(--primary-color);
+    color: #fff !important;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(8, 3, 15, 0.8), rgba(17, 8, 26, 0.7)), url('https://images.unsplash.com/photo-1598371839696-5c5bb00bdc28?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 5.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #e2e8f0;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.4);
+}
+
+/* =========================================
+   CARRUSEL INFINITO DE TEXTO (MARQUEE)
+   ========================================= */
+.marquee-container {
+    width: 100%;
+    background-color: #05010a;
+    border-top: 1px solid #2a1b3d;
+    border-bottom: 1px solid #2a1b3d;
+    padding: 15px 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.marquee-track {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll-marquee 20s linear infinite;
+}
+
+.marquee-track span {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #888;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+}
+
+.marquee-track .separator {
+    color: var(--primary-color);
+    margin: 0 50px;
+    font-size: 1rem;
+    text-shadow: 0 0 8px rgba(168, 85, 247, 0.4);
+}
+
+@keyframes scroll-marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused;
+}
+
+/* Portafolio (Grid) */
+.portfolio {
+    padding: 100px 50px;
+    background-color: var(--secondary-bg);
+    text-align: center;
+}
+
+.portfolio h2 {
+    font-size: 3rem;
+    margin-bottom: 50px;
+    color: var(--primary-color);
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4/5;
+    border-radius: 4px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    filter: grayscale(20%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 8, 26, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.overlay span {
+    color: var(--primary-color);
+    font-size: 2rem;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+    filter: grayscale(0%);
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+}
+
+.gallery-item:hover .overlay span {
+    transform: translateY(0);
+}
+
+/* Sobre el Artista */
+.about {
+    padding: 100px 50px;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-img {
+    flex: 1;
+}
+
+.about-img img {
+    width: 100%;
+    border: 2px solid var(--primary-color);
+    padding: 10px;
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.15);
+    border-radius: 4px;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: #ccc;
+}
+
+.features {
+    list-style: none;
+}
+
+.features li {
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Footer */
+footer {
+    background-color: #05010a;
+    padding: 60px 20px 20px;
+    text-align: center;
+    border-top: 1px solid #2a1b3d;
+}
+
+.footer-content {
+    max-width: 600px;
+    margin: 0 auto 40px;
+}
+
+.footer-content h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-size: 2.2rem;
+}
+
+.footer-content p {
+    margin-bottom: 25px;
+    color: #999;
+}
+
+.socials {
+    margin-top: 40px;
+}
+
+.socials a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: text-shadow 0.3s;
+}
+
+.socials a:hover {
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+
+.copyright {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* =========================================
+   ESTILOS DE LOS MODALES (ANIMADOS)
+   ========================================= */
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 1, 10, 0.95);
+    overflow-y: auto;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Modal Lightbox (Fotos) */
+.modal-content {
+    margin: 5% auto;
+    display: block;
+    max-width: 90%;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 1px solid #2a1b3d;
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.2);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: var(--primary-color);
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: text-shadow 0.3s;
+}
+
+.close-modal:hover {
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.8);
+}
+
+/* Modal Reserva WhatsApp */
+.modal-content-reserva {
+    background-color: var(--secondary-bg);
+    margin: 5% auto;
+    padding: 40px;
+    border: 1px solid #2a1b3d;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 900px;
+    position: relative;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    transform: translateY(40px) scale(0.95);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal.show .modal-content-reserva {
+    transform: translateY(0) scale(1);
+}
+
+.close-reserva {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: var(--primary-color);
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: text-shadow 0.3s;
+}
+
+.close-reserva:hover {
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.8);
+}
+
+.reserva-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.reserva-info h2 {
+    font-size: 2.8rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    line-height: 1.1;
+}
+
+.reserva-info h2 span {
+    color: var(--primary-color);
+}
+
+.reserva-info p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.info-detalles {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #2a1b3d;
+}
+
+.info-detalles p {
+    margin-bottom: 10px;
+    color: #e2e8f0;
+}
+
+.mapa-placeholder {
+    background-color: #05010a;
+    height: 180px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    border: 1px dashed #2a1b3d;
+    color: #666;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+}
+
+.reserva-whatsapp {
+    background-color: #05010a;
+    padding: 35px 30px;
+    border-radius: 12px;
+    border: 1px solid #2a1b3d;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.reserva-whatsapp h3 {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.reserva-whatsapp ul {
+    list-style: none;
+    margin: 25px 0;
+}
+
+.reserva-whatsapp ul li {
+    margin-bottom: 15px;
+    color: #e2e8f0;
+    font-size: 0.95rem;
+}
+
+.small-text {
+    font-size: 0.85rem !important;
+    color: #888 !important;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn-whatsapp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background-color: #1ED760;
+    color: #000;
+    padding: 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 25px 0 15px;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-3px);
+    background-color: #1fdf64;
+    box-shadow: 0 10px 20px rgba(30, 215, 96, 0.25);
+}
+
+/* =========================================
+   ANIMACIONES AL HACER SCROLL (SCROLL REVEAL)
+   ========================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.reveal.delay-1 { transition-delay: 0.1s; }
+.reveal.delay-2 { transition-delay: 0.2s; }
+.reveal.delay-3 { transition-delay: 0.3s; }
+.reveal.delay-4 { transition-delay: 0.4s; }
+.reveal.delay-5 { transition-delay: 0.5s; }
+.reveal.delay-6 { transition-delay: 0.6s; }
+
+/* =========================================
+   RESPONSIVE (MÓVILES)
+   ========================================= */
+@media (max-width: 768px) {
+    .navbar { padding: 20px; }
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background-color: rgba(8, 3, 15, 0.98);
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 1px solid #2a1b3d;
+    }
+    
+    .nav-links.active { display: flex; }
+    .nav-links li { margin: 15px 0; }
+    .hamburger { display: block; }
+    
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color);
+        margin: 5px 0;
+    }
+
+    .hero-content h1 { font-size: 3.5rem; }
+    .about { flex-direction: column; padding: 50px 20px; }
+    .portfolio { padding: 50px 20px; }
+    
+    .reserva-grid { grid-template-columns: 1fr; }
+    .modal-content-reserva {
+        padding: 30px 20px;
+        margin: 15% auto;
+        height: 80vh;
+        overflow-y: auto;
+    }
+}
